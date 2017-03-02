@@ -10,6 +10,9 @@ html body {
   width:100vw;
   height:100vh;
 }
+.currentrow {
+  background:rgba(0,0,255,0.4);
+}
 .ht_master {
   border:0px;
   vertical-align: middle;

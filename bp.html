@@ -35,6 +35,8 @@ var hot = new Handsontable(container, {
   data: data,
   colWidths: [74, 200, 64, 64, 100, 100, 200, 200],
   colHeaders: ["", "Blueprint", "ME", "TE", "Copies", "T2", "Price", "Price (T2)"],
+  rowHeaders: true,
+  currentRowClassName: 'currentrow',
   columns: [
     {data: "image", renderer: coverRenderer},
     {data: "blueprint", renderer: safeHtmlRenderer},
