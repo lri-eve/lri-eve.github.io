@@ -16,19 +16,76 @@
     <div id="spreadsheet"></div>
     <script>
     var data = [
-  ["", "Blueprint", "ME", "TE", "Copies", "T2", "Price"],
-  ["<img src='http://image.eveonline.com/Type/2204_64.png'>", "Acolyte I", 10, 20, "Yes", "Yes", "100,000 ISK"],
-  ["2017", 20, 11, 14, 13],
-  ["2018", 30, 15, 12, 13]
-];
+      {
+        image: "http://image.eveonline.com/Type/2204_64.png",
+        blueprint: "Acolyte I",
+        me: 10,
+        te: 20,
+        copies: "Yes",
+        t2: "Yes",
+        price: "100,000 ISK",
+        t2price: "400,000 ISK"
+      }
+    ],
+    container,
+    hot;
 
 var container = document.getElementById('spreadsheet');
 var hot = new Handsontable(container, {
   data: data,
-  rowHeaders: false,
-  colHeaders: false,
+  colHeaders: ["", "Blueprint", "ME", "TE", "Copies", "T2", "Price", "Price (T2)"],
+  columns: [
+    {data: "image", renderer: coverRenderer}
+    {data: "blueprint", renderer: safeHtmlRenderer},
+    {data: "me", renderer: safeHtmlRenderer},
+    {data: "te", renderer: safeHtmlRenderer},
+    {data: "copies", renderer: safeHtmlRenderer},
+    {data: "t2", renderer: safeHtmlRenderer},
+    {data: "price", renderer: safeHtmlRenderer},
+    {data: "t2price", renderer: safeHtmlRenderer},
+  ]
   editor: false
 });
+function strip_tags(input, allowed) {
+   var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi,
+     commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+
+   // making sure the allowed arg is a string containing only tags in lowercase (<a><b><c>)
+   allowed = (((allowed || "") + "").toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join('');
+
+   return input.replace(commentsAndPhpTags, '').replace(tags, function ($0, $1) {
+     return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : '';
+   });
+ }
+function safeHtmlRenderer(instance, td, row, col, prop, value, cellProperties) {
+   var escaped = Handsontable.helper.stringify(value);
+   escaped = strip_tags(escaped, '<em><b><strong><a><big>'); //be sure you only allow certain HTML tags to avoid XSS threats (you should also remove unwanted HTML attributes)
+   td.innerHTML = escaped;
+
+   return td;
+ }
+ function coverRenderer (instance, td, row, col, prop, value, cellProperties) {
+    var escaped = Handsontable.helper.stringify(value),
+      img;
+
+    if (escaped.indexOf('http') === 0) {
+      img = document.createElement('IMG');
+      img.src = value;
+
+      Handsontable.Dom.addEvent(img, 'mousedown', function (e){
+        e.preventDefault(); // prevent selection quirk
+      });
+
+      Handsontable.Dom.empty(td);
+      td.appendChild(img);
+    }
+    else {
+      // render as text
+      Handsontable.renderers.TextRenderer.apply(this, arguments);
+    }
+
+    return td;
+  }
 </script>
   </body>
   </html>
