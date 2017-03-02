@@ -19,8 +19,8 @@
       {
         image: "http://image.eveonline.com/Type/2204_64.png",
         blueprint: "Acolyte I",
-        me: 10,
-        te: 20,
+        me: "10",
+        te: "20",
         copies: "Yes",
         t2: "Yes",
         price: "100,000 ISK",
@@ -33,17 +33,18 @@
 var container = document.getElementById('spreadsheet');
 var hot = new Handsontable(container, {
   data: data,
+  colWidths: [74, 200, 64, 64, 100, 100, 200, 200],
   colHeaders: ["", "Blueprint", "ME", "TE", "Copies", "T2", "Price", "Price (T2)"],
   columns: [
-    {data: "image", renderer: coverRenderer}
+    {data: "image", renderer: coverRenderer},
     {data: "blueprint", renderer: safeHtmlRenderer},
     {data: "me", renderer: safeHtmlRenderer},
     {data: "te", renderer: safeHtmlRenderer},
     {data: "copies", renderer: safeHtmlRenderer},
     {data: "t2", renderer: safeHtmlRenderer},
     {data: "price", renderer: safeHtmlRenderer},
-    {data: "t2price", renderer: safeHtmlRenderer},
-  ]
+    {data: "t2price", renderer: safeHtmlRenderer}
+  ],
   editor: false
 });
 function strip_tags(input, allowed) {
