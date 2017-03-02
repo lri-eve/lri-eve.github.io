@@ -35,6 +35,156 @@
         t2: "Yes",
         price: "200,000 ISK",
         t2price: "500,000 ISK"
+      },
+      {
+        image: "http://image.eveonline.com/Type/2174_64.png",
+        blueprint: "Praetor I",
+        me: "10",
+        te: "20",
+        copies: "Yes",
+        t2: "Yes",
+        price: "200,000 ISK",
+        t2price: "500,000 ISK"
+      },
+      {
+        image: "http://image.eveonline.com/Type/2174_64.png",
+        blueprint: "Curator I",
+        me: "10",
+        te: "20",
+        copies: "Yes",
+        t2: "Yes",
+        price: "200,000 ISK",
+        t2price: "500,000 ISK"
+      },
+      {
+        image: "http://image.eveonline.com/Type/2174_64.png",
+        blueprint: "Hobgoblin I",
+        me: "10",
+        te: "20",
+        copies: "Yes",
+        t2: "Yes",
+        price: "200,000 ISK",
+        t2price: "500,000 ISK"
+      },
+      {
+        image: "http://image.eveonline.com/Type/2174_64.png",
+        blueprint: "Hammerhead I",
+        me: "10",
+        te: "20",
+        copies: "Yes",
+        t2: "Yes",
+        price: "200,000 ISK",
+        t2price: "500,000 ISK"
+      },
+      {
+        image: "http://image.eveonline.com/Type/2174_64.png",
+        blueprint: "Ogre I",
+        me: "10",
+        te: "20",
+        copies: "Yes",
+        t2: "Yes",
+        price: "200,000 ISK",
+        t2price: "500,000 ISK"
+      },
+      {
+        image: "http://image.eveonline.com/Type/2174_64.png",
+        blueprint: "Garde I",
+        me: "10",
+        te: "20",
+        copies: "Yes",
+        t2: "Yes",
+        price: "200,000 ISK",
+        t2price: "500,000 ISK"
+      },
+      {
+        image: "http://image.eveonline.com/Type/2174_64.png",
+        blueprint: "Hornet I",
+        me: "10",
+        te: "20",
+        copies: "Yes",
+        t2: "Yes",
+        price: "200,000 ISK",
+        t2price: "500,000 ISK"
+      },
+      {
+        image: "http://image.eveonline.com/Type/2174_64.png",
+        blueprint: "Vespa I",
+        me: "10",
+        te: "20",
+        copies: "Yes",
+        t2: "Yes",
+        price: "200,000 ISK",
+        t2price: "500,000 ISK"
+      },
+      {
+        image: "http://image.eveonline.com/Type/2174_64.png",
+        blueprint: "Wasp I",
+        me: "10",
+        te: "20",
+        copies: "Yes",
+        t2: "Yes",
+        price: "200,000 ISK",
+        t2price: "500,000 ISK"
+      },
+      {
+        image: "http://image.eveonline.com/Type/2174_64.png",
+        blueprint: "Warden I",
+        me: "10",
+        te: "20",
+        copies: "Yes",
+        t2: "Yes",
+        price: "200,000 ISK",
+        t2price: "500,000 ISK"
+      },
+      {
+        image: "http://image.eveonline.com/Type/2174_64.png",
+        blueprint: "Warrior I",
+        me: "10",
+        te: "20",
+        copies: "Yes",
+        t2: "Yes",
+        price: "200,000 ISK",
+        t2price: "500,000 ISK"
+      },
+      {
+        image: "http://image.eveonline.com/Type/2174_64.png",
+        blueprint: "Valkyrie I",
+        me: "10",
+        te: "20",
+        copies: "Yes",
+        t2: "Yes",
+        price: "200,000 ISK",
+        t2price: "500,000 ISK"
+      },
+      {
+        image: "http://image.eveonline.com/Type/2174_64.png",
+        blueprint: "Beserker I",
+        me: "10",
+        te: "20",
+        copies: "Yes",
+        t2: "Yes",
+        price: "200,000 ISK",
+        t2price: "500,000 ISK"
+      },
+      {
+        image: "http://image.eveonline.com/Type/2174_64.png",
+        blueprint: "Bouncer I",
+        me: "10",
+        te: "20",
+        copies: "Yes",
+        t2: "Yes",
+        price: "200,000 ISK",
+        t2price: "500,000 ISK"
+      },
+      {
+        image: "http://image.eveonline.com/Type/2174_64.png",
+        blueprint: "Einherji I",
+        me: "0",
+        te: "0",
+        copies: "Yes",
+        t2: "Yes",
+        price: "200,000 ISK",
+        t2price: "500,000 ISK"
       }
     ],
     container,
@@ -43,6 +193,9 @@
 var container = document.getElementById('spreadsheet');
 var hot = new Handsontable(container, {
   data: data,
+  columnSorting: {
+    column: 1
+  }
   colWidths: [74, 200, 64, 64, 100, 100, 200, 200],
   colHeaders: ["", "Blueprint", "ME", "TE", "Copies", "T2", "Price", "Price (T2)"],
   rowHeaders: true,
