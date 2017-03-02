@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Iceland');
+html body {
+  margin:0 auto;
+  padding:0;
+  font-family: 'Exo 2', sans-serif;
+}
+
 #spreadsheet {
   width:100vw;
   height:100vh;
 }
-
+.ht_master {
+  border:0px;
+}
 .ht_clone_top_left_corner th {
   border: 0px solid #F00;
 }
