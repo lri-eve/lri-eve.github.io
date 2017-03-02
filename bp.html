@@ -13,7 +13,7 @@
     <link rel="stylesheet" media="screen" href="//handsontable.com/dist/handsontable.full.css">  </head>
     <link rel="stylesheet" media="screen" href="hot.css">
   <body>
-    <div id="spreadsheet"></div>
+    <div id="spreadsheet" class="htColumnHeaders"></div>
     <script>
     var data = [
       {
@@ -45,7 +45,8 @@ var hot = new Handsontable(container, {
     {data: "price", renderer: safeHtmlRenderer},
     {data: "t2price", renderer: safeHtmlRenderer}
   ],
-  editor: false
+  editor: false,
+  readonly: true
 });
 function strip_tags(input, allowed) {
    var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi,

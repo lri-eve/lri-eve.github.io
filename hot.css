@@ -12,6 +12,7 @@ html body {
 }
 .ht_master {
   border:0px;
+  vertical-align: middle;
 }
 .ht_clone_top_left_corner th {
   border: 0px solid #F00;
@@ -19,6 +20,7 @@ html body {
 /* Bottom */
 .ht_master tr > td {
   border: 0px solid #F00;
+  vertical-align: middle;
 }
 
 /* Right */
