@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[.LRI.] Citizenship!</title>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="//handsontable.com/dist/handsontable.full.js"></script>
+    <link rel="stylesheet" media="screen" href="//handsontable.com/dist/handsontable.full.css">  </head>
+  <body>
+    <div id="spreadsheet"></div>
+    <script>
+    var data = [
+  ["Image", "Name", "ME", "TE", "Copies", "T2", "Price"],
+  ["Image goes here", "Acolyte I", 10, 20, "Yes", "Yes", "100,000 ISK"],
+  ["2017", 20, 11, 14, 13],
+  ["2018", 30, 15, 12, 13]
+];
+
+var container = document.getElementById('spreadsheet');
+var hot = new Handsontable(container, {
+  data: data,
+  rowHeaders: true,
+  colHeaders: true,
+  editor: false
+});
+</script>
+  </body>
+  </html>
