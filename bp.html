@@ -208,11 +208,15 @@ var hot = new Handsontable(container, {
     {data: "t2price", renderer: safeHtmlRenderer}
   ],
   columnSorting: {
-    column: 1
+    column: 1,
+    sortOrder: false
   },
   editor: false,
   readonly: true,
   fillHandle: false
+});
+hot.updateSettings({
+  columnSorting: false
 });
 function strip_tags(input, allowed) {
    var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi,
