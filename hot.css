@@ -54,3 +54,4 @@ html body {
 .ht_clone_top_left_corner th {
   border: 0px solid #F00;
 }
+.handsontable td {  height: 74px;}
