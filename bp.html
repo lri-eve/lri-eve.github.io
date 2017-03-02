@@ -193,9 +193,6 @@
 var container = document.getElementById('spreadsheet');
 var hot = new Handsontable(container, {
   data: data,
-  columnSorting: {
-    column: 1
-  }
   colWidths: [74, 200, 64, 64, 100, 100, 200, 200],
   colHeaders: ["", "Blueprint", "ME", "TE", "Copies", "T2", "Price", "Price (T2)"],
   rowHeaders: true,
@@ -210,6 +207,9 @@ var hot = new Handsontable(container, {
     {data: "price", renderer: safeHtmlRenderer},
     {data: "t2price", renderer: safeHtmlRenderer}
   ],
+  columnSorting: {
+    column: 1
+  },
   editor: false,
   readonly: true,
   fillHandle: false
