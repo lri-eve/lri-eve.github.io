@@ -215,9 +215,6 @@ var hot = new Handsontable(container, {
   readonly: true,
   fillHandle: false
 });
-hot.updateSettings({
-  columnSorting: false
-});
 function strip_tags(input, allowed) {
    var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi,
      commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
