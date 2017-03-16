@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[.LRI.] Citizenship!</title>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css.css">
+  </head>
+  <body class="landing">
+    <video playsinline autoplay muted poster="../bg.jpg" id="bgvid">
+    <source src="../bg.mp4" type="video/mp4">
+</video>
+    <ul class="nav">
+      <li><a href="index.html">Welcome</a></li>
+      <li><a href="corp.html">The Corporation</a></li>
+      <li><a href="http://secure.eveonline.com/signup/?invc=848c49ec-c08d-4b98-b0ca-6a56704f8224&action=buddy">Download EVE</a></li>
+    </ul>
+    <div class="logo"><img src="https://image.eveonline.com/Corporation/98501356_256.png"></div>
+    <div class="hero">Legion of Roughneck Industrialists</div>
+    <div class="wyltkm">Would you like to know more?</div>
+    <script>
+    var vid = document.getElementById("bgvid"),
+pauseButton = document.getElementById("vidpause");
+if (window.matchMedia('(prefers-reduced-motion)').matches) {
+    vid.removeAttribute("autoplay");
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
+}
+function vidFade() {
+    vid.classList.add("stopfade");
+}
+vid.addEventListener('ended', function() {
+    // only functional if "loop" is removed
+     vid.pause();
+	// to capture IE10
+	vidFade();
+});
+pauseButton.addEventListener("click", function() {
+    vid.classList.toggle("stopfade");
+	if (vid.paused) {
+vid.play();
+		pauseButton.innerHTML = "Pause";
+	} else {
+        vid.pause();
+        pauseButton.innerHTML = "Paused";
+	}
+})
+</script>
+  </body>
+</html>

@@ -12,6 +12,9 @@
     <link rel="stylesheet" type="text/css" href="css.css">
   </head>
   <body class="landing">
+    <video playsinline autoplay muted loop poster="bg.jpg" id="bgvid">
+    <source src="bg.mp4" type="video/mp4">
+</video>
     <ul class="nav">
       <li><a href="join.html">Join The Legion</a></li>
       <li><a href="index.html">Citizenship</a></li>
@@ -20,5 +23,33 @@
     <div class="logo"><img src="https://image.eveonline.com/Corporation/98501356_256.png"></div>
     <div class="hero">Service Guarantees Citizenship</div>
     <div class="wyltkm">Would you like to know more?</div>
+    <script>
+    var vid = document.getElementById("bgvid"),
+pauseButton = document.getElementById("vidpause");
+if (window.matchMedia('(prefers-reduced-motion)').matches) {
+    vid.removeAttribute("autoplay");
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
+}
+function vidFade() {
+    vid.classList.add("stopfade");
+}
+vid.addEventListener('ended', function() {
+    // only functional if "loop" is removed
+     vid.pause();
+	// to capture IE10
+	vidFade();
+});
+pauseButton.addEventListener("click", function() {
+    vid.classList.toggle("stopfade");
+	if (vid.paused) {
+vid.play();
+		pauseButton.innerHTML = "Pause";
+	} else {
+        vid.pause();
+        pauseButton.innerHTML = "Paused";
+	}
+})
+</script>
   </body>
 </html>

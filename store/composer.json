@@ -1,0 +1,5 @@
+{
+    "require": {
+        "evelabs/oauth2-eveonline": "^1.1"
+    }
+}
